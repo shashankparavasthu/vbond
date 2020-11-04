@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vbond</title>
+</head>
+<body>
+    <div>
+        <form action="login" method="POST">
+            
+            {% csrf_token %}
+            
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required><br>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required><br>
+
+            <input type="submit" value="Login">
+
+        </form>
+    </div>
+
+    <div>
+        
+        {% for message in messages %}
+            <p style="color:red">{{message}}</p>
+        {% endfor %}
+
+    </div>
+</body>
+</html>

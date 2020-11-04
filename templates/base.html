@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vbond</title>
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'css/styles.css' %}"/>
+</head>
+<body>
+    <!-- The sidebar -->
+    <div class="sidebar">	
+        <a class="active" href="#user">Hello {{user.first_name}}</a>
+        <a href="admin">Admin</a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <i class="fa fa-caret-down"></i>
+              </button>
+            <div class="dropdown-container">
+                <a href="#">Request Order List</a>
+                <a href="#">Approval List</a>
+                <a href="#">Confirmed Orders</a>
+            </div>
+    
+        </div>
+        <a href="approval">Approval</a>
+        <a href="register employee">Register Employee</a>
+        <a href = "{% url 'logout' %}">Logout</a>
+    </div>
+
+    <!-- Page content -->
+	<div class="main">
+        {% block content %}
+
+        {% endblock %}
+	</div> 
+    
+</body>
+</html>
+
+
